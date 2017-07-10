@@ -1,0 +1,37 @@
+body {
+  background: black;
+  color: #eeeeee;
+}
+
+heading img {
+  padding: 50px 0;
+  display: block;
+  margin: auto;
+}
+
+form {
+  display: inline-block;
+}
+
+h2 {
+  font-family: Arial, sans-serif;
+}
+
+#progress, #guesses {
+  text-align: center;
+}
+
+#progress, .written {
+  letter-spacing: 5px;
+  font-family: 'Pangolin', sans-serif;
+}
+
+#status-img img {
+  display: block;
+  margin: auto;
+  width: 500px;
+}
+
+.form {
+  text-align: center;
+}

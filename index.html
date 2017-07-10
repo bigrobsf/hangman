@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hangman!</title>
+  <link href="https://fonts.googleapis.com/css?family=Pangolin" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <heading><img src="assets/htitle.jpg" alt=""></heading>
+  <div id="progress"><h1>sample___</h1></div>
+
+  <div class="form">
+    <form action="#">
+      <div>
+        <input type="text" size="5" maxlength="1">
+        <input type="submit" value="Guess">
+      </div>
+    </form>
+  </div>
+
+  <div id="guesses"><h2>Incorrect guesses: <span class="written">a b c</span></h2></div>
+
+  <div id="status-img"><img src="assets/h0.jpg" alt=""></div>
+
+  <div class="form">
+    <form action="#">
+      <div>
+        <input type="submit" value="Play again!">
+      </div>
+    </form>
+  </div>
+  <!-- images based on http://www.datagenetics.com/blog/april12012/ -->
+
+  <script src="apps.js"></script>
+  <script src="words.js"></script>
+</body>
+</html>
