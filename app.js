@@ -16,9 +16,11 @@ document.addEventListener('DOMContentLoaded', function() {
   guessBtn.addEventListener('click', checkLetter);
 
   guessBox.focus();
-  guessBox.addEventListener('keyup', function(event) {
+  guessBox.addEventListener('keyup', keyUpHandler(event));
+
+  function keyUpHandler(event) {
     if (event.keyCode === 13) checkLetter();
-  });
+  }
 
   wordToGuess = selectWord(words);
 
@@ -32,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (letter.length) {
       if ((letter.charCodeAt(0) > 96 && letter.charCodeAt(0) < 123) ||
         (letter.charCodeAt(0) > 64 && letter.charCodeAt(0) < 91)) {
-          console.log(letter.toLowerCase());
           updateAttempt(letter.toLowerCase());
       }
     }
@@ -56,24 +57,30 @@ document.addEventListener('DOMContentLoaded', function() {
           trackProgress[i] = letter;
         }
       }
-      
+
       document.getElementsByTagName('h1')[0].innerText = trackProgress.join('');
+
+    }
+
+    if (wrongAttempts === 7) {
+      document.getElementById('result').classList.add('lost');
+      document.getElementsByTagName('p')[0].innerText = 'Game Over! The word was: ' + wordToGuess + '.';
+
+      guessBtn.removeEventListener('click', checkLetter);
+      guessBox.removeEventListener('keyup', keyUpHandler);
+    }
+
+    if (wordToGuess === document.getElementsByTagName('h1')[0].innerText) {
+      document.getElementById('result').classList.add('won');
+      document.getElementsByTagName('p')[0].innerText = 'Congrats! You figured it out!';
+
+      guessBtn.removeEventListener('click', checkLetter);
+      guessBox.removeEventListener('keyup', keyUpHandler);
     }
   }
 
-
-
 });
 
-
-// MAIN - game loop
-
-// function to re-initialize game:
-  // draw scaffold
-  // show blanks for word to be guessed
-  // show location for incorrect letters
-  // show remaining number of guesses as zero
-  // show form for entering guesses
 
 // function to select random word and display placeholder
 function selectWord(array) {
@@ -90,15 +97,3 @@ function selectWord(array) {
   h1Ele.innerText = progress;
   return word;
 }
-
-
-// function to check guesses
-
-// function to update game state:
-  // remaining guesses?
-  // word correctly guessed?
-
-// function to update DOM:
-  // scaffold
-  // incorrect letter list
-  // remaining number of guesses

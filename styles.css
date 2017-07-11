@@ -17,15 +17,19 @@ h2 {
   font-family: Arial, sans-serif;
 }
 
+p {
+  font-size: 36px;
+}
+
 #progress {
   letter-spacing: 5px;
 }
 
-#progress, #guesses {
+#progress, #guesses, #result, .form {
   text-align: center;
 }
 
-#progress, .wrong-list {
+#progress, #result, .wrong-list {
   font-family: 'Pangolin', sans-serif;
 }
 
@@ -35,6 +39,10 @@ h2 {
   width: 500px;
 }
 
-.form {
-  text-align: center;
+.lost {
+  color: red;
+}
+
+.won {
+  color: green;
 }
