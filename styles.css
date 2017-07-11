@@ -15,10 +15,11 @@ form {
 
 h2 {
   font-family: Arial, sans-serif;
+  font-size: 4vmin;
 }
 
 p {
-  font-size: 36px;
+  font-size: 5vmin;
 }
 
 #progress {

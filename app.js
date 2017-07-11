@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   let guessBtn = document.getElementById('guess');
   let guessBox = document.querySelector('.guess-box');
-  let playBtn = document.querySelector('.play-again');
+  let playBtn = document.getElementById('play-again');
 
   // adds event listeners to the guess text box and button
   guessBtn.addEventListener('click', main);
