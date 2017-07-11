@@ -17,12 +17,15 @@ h2 {
   font-family: Arial, sans-serif;
 }
 
+#progress {
+  letter-spacing: 5px;
+}
+
 #progress, #guesses {
   text-align: center;
 }
 
-#progress, .written {
-  letter-spacing: 5px;
+#progress, .wrong-list {
   font-family: 'Pangolin', sans-serif;
 }
 
