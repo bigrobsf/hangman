@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   let guessBtn = document.getElementById('guess');
   let guessBox = document.querySelector('.guess-box');
-  // let playBtn = document.querySelector('.play-again');
+  let playBtn = document.querySelector('.play-again');
 
   // adds event listeners to the guess text box and button
   guessBtn.addEventListener('click', main);
@@ -19,10 +19,12 @@ document.addEventListener('DOMContentLoaded', function() {
   guessBox.focus();
   guessBox.addEventListener('keyup', keyUpHandler(event));
 
-  // playBtn = document.addEventListener('click', function() {
-  //   console.log('Attempt to reload page...');
-  //   location.reload(); // WHY DOESN'T THIS WORK?????
-  // });
+  playBtn = document.addEventListener('click', function(event) {
+    if (event.target.value === 'Play again!') {
+      event.preventDefault();
+      location.reload();
+    }
+  });
 
   // handler for keyup event
   function keyUpHandler(event) {
@@ -48,7 +50,9 @@ document.addEventListener('DOMContentLoaded', function() {
         (letter.charCodeAt(0) > 64 && letter.charCodeAt(0) < 91)) {
           return letter.toLowerCase();
       }
-    } else main(); // this is not an optimal way to handle lack of input
+    }
+
+    // else main(); // this is not an optimal way to handle lack of input
   }
 
   // updates game status for guess attempt
