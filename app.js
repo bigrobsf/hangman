@@ -11,12 +11,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
   let guessBtn = document.getElementById('guess');
   let guessBox = document.querySelector('.guess-box');
+  // let playBtn = document.querySelector('.play-again');
 
   // adds event listeners to the guess text box and button
   guessBtn.addEventListener('click', main);
 
   guessBox.focus();
   guessBox.addEventListener('keyup', keyUpHandler(event));
+
+  // playBtn = document.addEventListener('click', function() {
+  //   console.log('Attempt to reload page...');
+  //   location.reload(); // WHY DOESN'T THIS WORK?????
+  // });
 
   // handler for keyup event
   function keyUpHandler(event) {
@@ -32,7 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // gets and validates guessed letter
   function getLetter() {
-    let guess = '';
     let letter = document.querySelector('.guess-box').value;
 
     // clears guess field
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
         (letter.charCodeAt(0) > 64 && letter.charCodeAt(0) < 91)) {
           return letter.toLowerCase();
       }
-    }
+    } else main();
   }
 
   // updates game status for guess attempt
