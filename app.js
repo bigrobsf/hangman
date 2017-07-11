@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
         (letter.charCodeAt(0) > 64 && letter.charCodeAt(0) < 91)) {
           return letter.toLowerCase();
       }
-    } else main();
+    } else main(); // this is not an optimal way to handle lack of input
   }
 
   // updates game status for guess attempt
