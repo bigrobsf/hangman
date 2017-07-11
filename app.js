@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
 
-    // else main(); // this is not an optimal way to handle lack of input
+    else main(); // this is not an optimal way to handle lack of input
   }
 
   // updates game status for guess attempt
