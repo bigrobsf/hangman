@@ -47,3 +47,8 @@ p {
 .won {
   color: green;
 }
+
+.footer {
+  margin-top: 5vmin;
+  color: #aaaaaa;
+}

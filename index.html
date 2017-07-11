@@ -12,21 +12,30 @@
 </head>
 <body>
   <heading><img src="assets/htitle.jpg" class="img-responsive" alt=""></heading>
-  <div id="progress"><h1></h1></div>
 
-  <div class="form">
-    <form class="form-inline" action="#">
-      <div class="form-group">
-        <input type="text" class="form-control guess-box" size="5" maxlength="1">
-        <button type="submit" class="btn btn-default" id="guess">Guess</button>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <div id="progress"><h1></h1></div>
+
+        <div class="form">
+          <form class="form-inline" action="#">
+            <div class="form-group">
+              <input type="text" class="form-control guess-box" size="5" maxlength="1">
+              <button type="submit" class="btn btn-default" id="guess">Guess</button>
+            </div>
+          </form>
+        </div>
+
+        <div id="guesses"><h2>Incorrect guesses: <span class="wrong-list"></span></h2></div>
+        <div id="result"><p></p></div>
       </div>
-    </form>
+      
+      <div class="col-xs-12 col-sm-6">
+        <div id="status-img"><img src="assets/h0.jpg" class="img-responsive" alt=""></div>
+      </div>
+    </div>
   </div>
-
-  <div id="guesses"><h2>Incorrect guesses: <span class="wrong-list"></span></h2></div>
-  <div id="result"><p></p></div>
-
-  <div id="status-img"><img src="assets/h0.jpg" class="img-responsive" alt=""></div>
 
   <div class="form">
     <form action="#">
@@ -35,8 +44,8 @@
       </div>
     </form>
   </div>
-  
-  <!-- images based on http://www.datagenetics.com/blog/april12012/ -->
+
+  <div class="text-center footer"><h5>Images based on <a href="http://www.datagenetics.com/blog/april12012/" target="_blank">datagenetics</a></h5></div>
 
   <script src="words.js"></script>
   <script src="app.js"></script>
