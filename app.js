@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // controls flow of game
   function main() {
     let letter = getLetter();
-    updateGameStatus(letter);
+    if (letter.length) updateGameStatus(letter); // need to create try catch for TypeError
     checkEndOfGame();
   }
 
@@ -51,8 +51,6 @@ document.addEventListener('DOMContentLoaded', function() {
           return letter.toLowerCase();
       }
     }
-
-    else main(); // this is not an optimal way to handle invalid input
   }
 
   // updates game status for guess attempt
