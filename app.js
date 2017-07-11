@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
   let guessBox = document.querySelector('.guess-box');
 
   let wordToGuess = '';
-  let trackProgress = '';
   let wrongAttempts = 0;
 
   // adds event listeners to the guess text box and button
@@ -22,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   wordToGuess = selectWord(words);
-
 
   // gets, validates, and checks for guessed letter
   function checkLetter() {
@@ -46,12 +44,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
       let wlEle = document.querySelector('.wrong-list');
       let wrongList = wlEle.innerText;
-      wlEle.innerText = wrongList + letter + ' ';
+      wlEle.innerText = wrongList + ' ' + letter + ' ';
 
       let siEle = document.getElementById('status-img');
       siEle.children[0].setAttribute('src',"assets/h" + wrongAttempts + ".jpg");
     } else {
+      let trackProgress = document.getElementsByTagName('h1')[0].innerText.split('');
+
+      for (var i = 0; i < wordToGuess.length; i++) {
+        if (wordToGuess[i] === letter) {
+          trackProgress[i] = letter;
+        }
+      }
       
+      document.getElementsByTagName('h1')[0].innerText = trackProgress.join('');
     }
   }
 
