@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
   guessBox.focus();
   guessBox.addEventListener('keyup', keyUpHandler(event));
 
-  playBtn = document.addEventListener('click', function(event) {
+  playBtn.addEventListener('click', function(event) {
     if (event.target.value === 'Play again!') {
       event.preventDefault();
       location.reload();
